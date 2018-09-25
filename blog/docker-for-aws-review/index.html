@@ -45,11 +45,11 @@ Motivation A few weeks ago I decided I wanted to create a highly available conta
 
 
     
-    <link rel="stylesheet" href="https://mvbakker.github.io/css/reset.css?t=2018-09-25%2019%3a16%3a23.411870282%20%2b0200%20CEST%20m%3d%2b0.096974504">
-    <link rel="stylesheet" href="https://mvbakker.github.io/css/pygments.css?t=2018-09-25%2019%3a16%3a23.411870282%20%2b0200%20CEST%20m%3d%2b0.096974504">
-    <link rel="stylesheet" href="https://mvbakker.github.io/css/main.css?t=2018-09-25%2019%3a16%3a23.411870282%20%2b0200%20CEST%20m%3d%2b0.096974504">
+    <link rel="stylesheet" href="https://mvbakker.github.io/css/reset.css?t=2018-09-25%2019%3a21%3a07.964906189%20%2b0200%20CEST%20m%3d%2b0.094740430">
+    <link rel="stylesheet" href="https://mvbakker.github.io/css/pygments.css?t=2018-09-25%2019%3a21%3a07.964906189%20%2b0200%20CEST%20m%3d%2b0.094740430">
+    <link rel="stylesheet" href="https://mvbakker.github.io/css/main.css?t=2018-09-25%2019%3a21%3a07.964906189%20%2b0200%20CEST%20m%3d%2b0.094740430">
     
-        <link rel="stylesheet" href="https://mvbakker.github.io/css/override.css?t=2018-09-25%2019%3a16%3a23.411870282%20%2b0200%20CEST%20m%3d%2b0.096974504">
+        <link rel="stylesheet" href="https://mvbakker.github.io/css/override.css?t=2018-09-25%2019%3a21%3a07.964906189%20%2b0200%20CEST%20m%3d%2b0.094740430">
     
 
 
@@ -224,7 +224,7 @@ The CloudFormation TemplateThe &lsquo;Docker for AWS&rsquo; solution is deploye
 
 <p>The load-balancer is configured to listen to port 80 and 443 (only). When you open a port on the cluster via a container or a service, than the load-balancer is able to reach it. If you are planning on only running one web-service on your cluster, than this will be sufficient. Otherwise you&rsquo;ll have to install something like <a href="https://traefik.io/">Traefik</a>.</p>
 
-<p>Traefik will ensure that you can route multiple services over port 80 and 443, while traefik takes care of the internal load-balancing within the container platform. Pascal Andy created a nice <a href="https://pascalandy.com/blog/traefik-demo-docker-stack-and-play-with-docker/">Traefik tutorial</a> to deploy it quickly on <a href="http://labs.play-with-docker.com/!">http://labs.play-with-docker.com/!</a> Additionally, I created a small <a href="https://github.com/mvbakker/Traefik_setup">stack-file to deploy Treafik on the Docker for AWS</a> platform.</p>
+<p>Traefik will ensure that you can route multiple services over port 80 and 443, while traefik takes care of the internal load-balancing within the container platform. Pascal Andy created a nice <a href="https://pascalandy.com/blog/traefik-demo-docker-stack-and-play-with-docker/">Traefik tutorial</a> to deploy it quickly on <a href="http://labs.play-with-docker.com/">http://labs.play-with-docker.com/</a> ! Additionally, I created a small <a href="https://github.com/mvbakker/Traefik_setup">stack-file to deploy Treafik on the Docker for AWS</a> platform.</p>
 
 <p>Additionally Docker for AWS provides you to make use of the <a href="https://aws.amazon.com/certificate-manager/">free SSL certificate service</a>. This makes secure web-services very easy. I used DNS validation, where you basically have you domain provider configured to have one CNAME-record pointing from (one of your sub)domain(s) to the url of the ELB of the Docker for AWS cluster and one CNAME-record for validation. Note: make sure to <a href="http://www.dns-sd.org/trailingdotsindomainnames.html">add the trailing dot</a> to the validation address that AWS provides you. This was a stupid mistake and valuable lesson, please use it to your advantage.</p>
 
